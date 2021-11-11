@@ -9,6 +9,7 @@ import io.invertase.firebase.common.ReactNativeFirebaseEvent;
 import io.invertase.firebase.common.SharedUtils;
 import java.util.Map;
 import java.util.Set;
+import android.R.drawable;
 
 public class ReactNativeFirebaseMessagingSerializer {
   private static final String KEY_TOKEN = "token";
@@ -153,6 +154,8 @@ public class ReactNativeFirebaseMessagingSerializer {
 
     if (notification.getIcon() != null) {
       androidNotificationMap.putString("smallIcon", notification.getIcon());
+    } else {
+      androidNotificationMap.putString("smallIcon", drawable.ic_stat_ic_notification);
     }
 
     if (notification.getImageUrl() != null) {
